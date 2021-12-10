@@ -1181,6 +1181,46 @@ ul.breadcrumb a:focus {
   -ms-flex-align: center;
   align-items: center; }
 
+
+.who-tmb .cont.pycharm{
+  background: #675EF6;
+  border: 1px solid #39353E;
+  min-height: 300px;
+  padding: 10px 65px 10px 110px;
+  justify-content: space-between;
+}
+.who-tmb h3.pycharm__title {
+  color: #FFFFFF;
+  margin-bottom: 20px; 
+  
+
+}
+.pycharm__descr {
+  color: #FFFFFF;
+}
+.who-tmb .cont.pycharm .who-tmb-pic.pycharm__img {
+  margin: 0;
+  margin-right: 40px;
+  width: 230px;
+  /* height: 250px; */
+  max-width: unset;
+  flex: 0 0 230px;
+}
+@media (max-width: 991px) {
+  .who-tmb .cont.pycharm{
+    padding: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .who-tmb .cont.pycharm{
+    padding: 25px 13px;
+    min-height: unset;
+  }
+  .who-tmb .cont.pycharm .who-tmb-pic.pycharm__img {
+    flex: 0 0 94px;
+  }
+}
+
 .career-tmb h3,
 .career-tmb .h3,
 .who-tmb h3,
@@ -5368,3 +5408,7 @@ textarea.error {
     padding-top: 45px; } }
 
 /*# sourceMappingURL=styles.css.map */
+
+/* Py Charm */
+
+
