@@ -1,3 +1,5 @@
+var ENV = '';
+
 var numFormat = wNumb({
 	thousand: ' '
 });
@@ -132,8 +134,6 @@ $(document).ready(function() {
 			if (calcResultIndex == $(".calc-result-slider .slide").length) {
 				calcResultIndex = $(".calc-result-slider .slide").length - 1;
 			}
-
-			console.log(calcResultIndex)
 
 			$(".calc-result-slider").slick("slickGoTo", calcResultIndex);
 
@@ -282,8 +282,6 @@ $(document).ready(function() {
 				url: $(this).attr("data-url"),
 				dataType: "html"
 			}).done(function (data) {
-
-				console.log($(data))
 
 				curModal.find(".ajax-modal-content").html($(data));
 
@@ -870,15 +868,19 @@ function validateForms() {
 					validatorcalc.errorList[0].element.focus();
 				}
 			},
-			submitHandler: function(form) {
-				$.ajax({
-					type: "POST",
-					data: $(form).serialize(),
-					success: function () {
-						formSuccess(form);
-					}
-				});
-				return false;
+			submitHandler: function (form) {
+				if (ENV === 'production') {
+						submitHandler(form)
+				} else {
+						$.ajax({
+								type: ""POST"",
+								data: $(form).serialize(),
+								success: function () {
+										formSuccess(form);
+								}
+						});
+						return false;
+				}
 			}
 		});
 		if ($(this).find("input.password").length && $(this).find("input.password-repeat").length) {
